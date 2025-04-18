@@ -51,7 +51,6 @@ footer {
 }
 .site-title span {
   font-weight: 400;
-  color: var(--text-light);
 }
 .main-nav a {
   color: var(--text-light);
