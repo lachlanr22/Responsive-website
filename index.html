@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Gordon Andrews | Designer & Innovator</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -10,10 +10,14 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <img src="assets/images/logo.png" alt="Gordon Andrews logo" class="logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Gordon Andrews logo" class="logo" draggable="false">
+      </a>
       <h1 class="site-title">
-        Gordon Andrews
-        <span> | Designer &amp; Innovator</span>
+        <a href="index.html">
+          Gordon Andrews
+          <span> | Designer & Innovator</span>
+        </a>
       </h1>
       <nav class="main-nav">
         <a href="index.html">Home</a>
@@ -22,10 +26,10 @@
         <a href="about.html">About</a>
       </nav>
       <button class="search-btn" aria-label="Search">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </button>
     </div>
@@ -38,7 +42,7 @@
 
     <section class="hero">
       <div class="container hero-inner">
-        <img src="assets/images/hero.png" alt="Portrait of Gordon Andrews">
+        <img src="assets/images/hero.png" alt="Portrait of Gordon Andrews" draggable="false">
         <div class="hero-overlay">
           <h2>Designing a Nation</h2>
           <p>The creative force behind Australia’s first decimal banknotes and beyond.</p>
@@ -48,25 +52,50 @@
 
     <section class="featured-work container">
       <h2>Featured Work</h2>
-      <div class="grid">
-        <article class="project">
-          <img src="assets/images/banknote-2d.jpeg" alt="Australia $2 note designed by Gordon Andrews">
-          <h3>Australian Decimal Banknotes (1966)</h3>
-        </article>
-        <article class="project">
-          <img src="assets/images/monograph.jpeg" alt="Cover of 1993 monograph ‘Gordon Andrews: A Designer’s Life’">
-          <h3>“A Designer’s Life” (1993)</h3>
-        </article>
-        <article class="project">
-          <img src="assets/images/cameron-lift.jpg" alt="Cameron Offices lift interior designed by Gordon Andrews">
-          <h3>Cameron Offices (1970s)</h3>
-        </article>
+
+      <div class="work-item">
+        <div class="work-image">
+          <img src="assets/images/banknote-2d.jpeg" alt="Australia $2 note designed by Gordon Andrews" draggable="false">
+        </div>
+        <div class="work-text">
+          <h3>Australian Decimal Banknotes (1966) – Image of the $2 Note</h3>
+          <p>Gordon Andrews designed Australia’s first decimal banknotes, introduced in 1966, creating a distinctly Australian visual identity. The $2 note features John Macarthur, a key figure in the wool industry, with intricate security patterns and vibrant colours. Andrews’ work combined artistic detail with anti-counterfeiting measures, shaping the future of Australian currency design.</p>
+        </div>
       </div>
+
+      <div class="work-item reverse">
+        <div class="work-image">
+          <img src="assets/images/monograph.jpeg" alt="Cover of 1993 monograph 'Gordon Andrews: A Designer’s Life'" draggable="false">
+        </div>
+        <div class="work-text">
+          <h3>“Gordon Andrews: A Designer’s Life” (1993) – Exhibition & Book</h3>
+          <p>This retrospective exhibition, held at the Powerhouse Museum, celebrated the breadth of Gordon Andrews’ career in graphic, industrial, and exhibition design. The accompanying monograph, Gordon Andrews: A Designer’s Life, was published the same year by NSW University Press. The exhibition showcased his influential work, from furniture and urban wayfinding systems to his famous currency designs, cementing his role in shaping Australia’s modern visual identity.</p>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="work-image">
+          <img src="assets/images/cameron-lift.jpg" alt="Cameron Offices lift interior designed by Gordon Andrews" draggable="false">
+        </div>
+        <div class="work-text">
+          <h3>Cameron Offices (1970s) – Architectural Interiors & Wayfinding</h3>
+          <p>Designed in collaboration with architect John Andrews (no relation), the Cameron Offices in Canberra were an example of Brutalist architecture, where Gordon Andrews contributed to interior design and wayfinding systems. His work blended functionality with modernist aesthetics, integrating custom signage and design elements that complemented the building’s geometric, industrial structure. His approach to urban design helped enhance navigation and user experience in large-scale public spaces.</p>
+        </div>
+      </div>
+
     </section>
   </main>
 
-  <footer>
-    <p>This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2025.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-attribution">This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2025.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
   </footer>
 
 </body>
