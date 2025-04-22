@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Gordon Andrews | Gallery</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="gallery-page">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html"><img src="assets/images/logo.png" alt="Gordon Andrews logo" class="logo" draggable="false"></a>
+      <h1 class="site-title">
+        <a href="index.html">Gordon Andrews<span> | Designer & Innovator</span></a>
+      </h1>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="search-container">
+        <button class="search-btn" aria-label="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <input type="text" class="search-input" placeholder="Search…" aria-label="Search">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-heading-container">
+      <h2 class="page-heading">Gallery</h2>
+    </div>
+
+    <section class="gallery container">
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="assets/images/cameron-offices.jpg" alt="Transparency of Cameron Offices signage designed by Gordon Andrews" draggable="false">
+        </div>
+        <div class="gallery-caption">
+          Transparency of Cameron Offices signage designed by Gordon Andrews
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="assets/images/fivedollar.jpg" alt="Photograph of Australian five dollar note obverse and reverse designed by Gordon Andrews" draggable="false">
+        </div>
+        <div class="gallery-caption">
+          Photograph of Australian five dollar note obverse and reverse designed by Gordon Andrews
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="assets/images/onedollar.jpg" alt="One dollar banknote design sketch by Gordon Andrews" draggable="false">
+        </div>
+        <div class="gallery-caption">
+          One dollar banknote design sketch by Gordon Andrews
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="assets/images/fruitcake.jpg" alt="Label for fruit cake designed by Gordon Andrews for David Jones" draggable="false">
+        </div>
+        <div class="gallery-caption">
+          Label for fruit cake designed by Gordon Andrews for David Jones
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="assets/images/rondo-chair.jpg" alt="'Rondo' chair by Gordon Andrews" draggable="false">
+        </div>
+        <div class="gallery-caption">
+          'Rondo' chair by Gordon Andrews
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-image">
+          <img src="assets/images/exhibition-invitation.jpg" alt="Exhibition invitation designed by Gordon Andrews" draggable="false">
+        </div>
+        <div class="gallery-caption">
+          Exhibition invitation designed by Gordon Andrews
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-attribution">This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2025.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.querySelector('.search-container');
+      const btn = document.querySelector('.search-btn');
+      const input = document.querySelector('.search-input');
+      btn.addEventListener('click', function() {
+        container.classList.toggle('active');
+        if (container.classList.contains('active')) input.focus();
+      });
+    });
+  </script>
+</body>
+</html>
