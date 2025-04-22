@@ -110,57 +110,148 @@ body {
 }
 .page-heading-container {
   text-align: center;
-  margin: 2rem 0 1rem;
+  margin: 2rem 0 0.5rem;
 }
 .page-heading {
   font-family: var(--font-heading);
   font-size: 3rem;
 }
 .hero {
-  /* unchanged */
+  position: relative;
 }
-.hero .container { /* unchanged */ }
-.hero-inner { /* unchanged */ }
-.hero-inner img { /* unchanged */ }
-.hero-inner:hover img { /* unchanged */ }
-.hero-overlay { /* unchanged */ }
-.hero-inner:hover .hero-overlay { /* unchanged */ }
-.hero-overlay h2 { /* unchanged */ }
-.hero-overlay p { /* unchanged */ }
+.hero .container {
+  width: 98%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+}
+.hero-inner {
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner img {
+  width: 100%;
+  display: block;
+  transition: filter 0.3s ease;
+  pointer-events: none;
+}
+.hero-inner:hover img {
+  filter: brightness(0.6);
+}
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  max-width: 35%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.hero-inner:hover .hero-overlay {
+  opacity: 1;
+}
+.hero-overlay h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--text-light);
+  padding-bottom: 0.25rem;
+}
+.hero-overlay p {
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
 .featured-work {
-  /* unchanged for homepage */
+  padding: 4rem 0;
 }
-.projects-section {
+.featured-work h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.work-item {
+  display: flex;
+  align-items: center;
   margin-bottom: 4rem;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.work-item.reverse {
+  flex-direction: row-reverse;
 }
-.project {
+.work-image {
+  flex: 1;
   background: var(--bg-dark);
-  padding: 1rem;
   border: 2px solid var(--accent-blue);
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 20px;
+  overflow: hidden;
 }
-.project:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-.project img {
-  width: 100%;
-  height: auto;
+.work-image img {
+  width: calc(100% - 40px);
   display: block;
+  margin: 0 auto;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+.work-image:hover img {
+  width: 100%;
+}
+.work-text {
+  flex: 1;
+  padding: 0 2rem;
+}
+.work-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.work-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+body.projects-page .page-heading-container {
   margin-bottom: 1rem;
 }
-.project h3 {
+body.projects-page .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+body.projects-page .project-item {
+  background: var(--bg-dark);
+  border: 2px solid var(--accent-blue);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+body.projects-page .project-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+body.projects-page .project-image {
+  background: #fff;
+  padding: 1rem;
+  width: 100%;
+}
+body.projects-page .project-image img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+body.projects-page .project-text {
+  margin-top: 1rem;
+  text-align: center;
+}
+body.projects-page .project-text h3 {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
-.project p {
+body.projects-page .project-text p {
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -219,8 +310,12 @@ body {
     margin-left: 0;
     gap: 1.5rem;
   }
-  .projects-section {
-    margin-bottom: 3rem;
+  .hero-overlay {
+    right: 8%;
+    max-width: 40%;
+  }
+  .hero-overlay h2 {
+    font-size: 2rem;
   }
   .footer-inner {
     flex-direction: column;
@@ -237,8 +332,14 @@ body {
   .page-heading {
     font-size: 2rem;
   }
-  .projects-section {
-    margin-bottom: 2rem;
+  .hero-overlay {
+    bottom: 1rem;
+    right: 5%;
+    transform: none;
+    max-width: 90%;
+  }
+  .hero-overlay h2 {
+    font-size: 1.75rem;
   }
   .footer-inner {
     flex-direction: column;
