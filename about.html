@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Gordon Andrews | About</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="about-page">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html">
+        <img src="assets/images/logo.png"
+             alt="Gordon Andrews logo"
+             class="logo"
+             draggable="false">
+      </a>
+      <h1 class="site-title">
+        <a href="index.html">
+          Gordon Andrews
+          <span> | Designer &amp; Innovator</span>
+        </a>
+      </h1>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="search-container">
+        <button class="search-btn" aria-label="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <input type="text"
+               class="search-input"
+               placeholder="Search…"
+               aria-label="Search">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-heading-container">
+      <h2 class="page-heading">About</h2>
+    </div>
+
+    <section class="about container">
+      <figure class="about-image">
+        <img src="assets/images/GordonBlackandWhite.jpg"
+             alt="Photograph, black and white, of Gordon Andrews, photograph by Mary Andrews, London, 1950"
+             draggable="false">
+        <figcaption>
+          Photograph, black and white, of Gordon Andrews, photograph by Mary Andrews, London, 1950
+        </figcaption>
+      </figure>
+      <div class="about-text">
+        <p>
+          Gordon Andrews (b 1914) was born in Ashfield, NSW. His career has embraced industrial design (cookware, furniture), graphic design, development of exhibition concepts and photography. He trained at Sydney Technical College, Ultimo and East Sydney Technical College, gaining formative experience in graphic design with the advertising agencies Sampson Clark Price Berry, Sydney and Stuart London in the 1930s. He returned to Sydney in 1939 and briefly ran his own practice. During WWII he worked in the De Havilland drawing office and later supervised an experimental hangar.
+        </p>
+        <p>
+          In 1946 he held a one-man show of paintings and “constructions”, including contemporary furniture, some later copied by others. In 1949 he moved to London, set up his own design office and worked with the Design Research Unit on exhibitions for Ilford, Peter Robinsons, The Tea Board and the British Council, as well as showrooms for Olivetti and Smiths Instruments. In 1951 he was made a Fellow of the Society of Industrial Designers.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-extra container">
+      <div class="about-bio">
+        <p>
+          During 1953–54 he lived in Turin, Italy, where he designed an encyclopaedia-styled fountain pen and produced an exhibition for the 1954 Fiera di Milano. Returning to Sydney, he designed exhibitions, shops, showrooms and furniture for Olivetti, David Jones, the Commonwealth Bank, NSW government agencies and other clients. He is best known for designing Australia’s first decimal banknotes, released on 14 February 1966 in collaboration with Hal Massingham, Douglas Annand and Alistair Morrison.
+        </p>
+        <p>
+          Andrews was one of Australia’s foremost industrial designers. He worked internationally, was the first Australian elected Fellow of the UK Society of Industrial Artists & Designers (1956), and joined the Faculty of Royal Designers for Industry and the Alliance Graphique Internationale. His interiors for the Australian Pavilion at the Comptoir Suisse trade fair (1960), the NSW Government Tourist Bureau (1961) and the New Zealand Government Tourist Bureau (1965) remain celebrated. A retrospective “Gordon Andrews: a designer’s life” opened at the Powerhouse Museum in 1993.
+        </p>
+      </div>
+      <figure class="aside-image">
+        <img src="assets/images/GordonYoung.jpg"
+             alt="Photograph, black and white, of Andrews as a boy painting a model car, n.d."
+             draggable="false">
+        <figcaption>
+          Photograph, black and white, of Andrews as a boy painting a model car, n.d.
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-attribution">
+        This website was produced by students in the Faculty of Arts &amp; Design, University of Canberra, 2025.
+      </p>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.querySelector('.search-container');
+      const btn = document.querySelector('.search-btn');
+      const input = document.querySelector('.search-input');
+      btn.addEventListener('click', function() {
+        container.classList.toggle('active');
+        if (container.classList.contains('active')) input.focus();
+      });
+    });
+  </script>
+</body>
+</html>

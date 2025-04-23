@@ -44,10 +44,6 @@ body {
   display: flex;
   align-items: center;
 }
-.site-title a {
-  display: flex;
-  align-items: center;
-}
 .site-title span {
   font-weight: 400;
   margin-left: 0.5rem;
@@ -82,10 +78,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.search-btn svg {
-  width: 24px;
-  height: 24px;
 }
 .search-input {
   position: absolute;
@@ -210,9 +202,6 @@ body {
   font-size: 1rem;
   line-height: 1.5;
 }
-body.projects-page .page-heading-container {
-  margin: 2rem 0 0.5rem;
-}
 body.projects-page .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
@@ -258,7 +247,7 @@ body.gallery-page .gallery-item {
   background: var(--bg-dark);
   border: 2px solid var(--accent-blue);
   padding: 20px;
-  overflow: hidden;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 body.gallery-page .gallery-item:hover {
@@ -267,14 +256,48 @@ body.gallery-page .gallery-item:hover {
 body.gallery-page .gallery-image img {
   width: calc(100% - 40px);
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   pointer-events: none;
 }
 body.gallery-page .gallery-caption {
+  margin-top: 1rem;
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.4;
-  color: var(--text-light);
+}
+body.about-page .about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+body.about-page .about-image img,
+body.about-page .aside-image img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+body.about-page .about-image:hover img,
+body.about-page .aside-image:hover img {
+  transform: scale(1.02);
+}
+body.about-page .about-image figcaption,
+body.about-page .aside-image figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+  opacity: 0.8;
+}
+body.about-page .about-text p,
+body.about-page .about-bio p {
+  margin-bottom: 1rem;
+}
+body.about-page .about-extra {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 .site-footer {
   background: #666666;
@@ -337,6 +360,10 @@ body.gallery-page .gallery-caption {
   }
   .hero-overlay h2 {
     font-size: 2rem;
+  }
+  .about,
+  .about-extra {
+    display: block;
   }
   .footer-inner {
     flex-direction: column;
