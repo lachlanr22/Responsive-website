@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Gordon Andrews | Gallery</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="gallery-page">
 
@@ -14,7 +14,7 @@
       <h1 class="site-title">
         <a href="index.html">Gordon Andrews<span> | Designer & Innovator</span></a>
       </h1>
-      <nav class="main-nav">
+      <nav class="main-nav" role="navigation">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="gallery.html">Gallery</a>
@@ -43,49 +43,37 @@
         <div class="gallery-image">
           <img src="assets/images/cameron-offices.jpg" alt="Transparency of Cameron Offices signage designed by Gordon Andrews" draggable="false">
         </div>
-        <div class="gallery-caption">
-          Transparency of Cameron Offices signage designed by Gordon Andrews
-        </div>
+        <div class="gallery-caption">Transparency of Cameron Offices signage designed by Gordon Andrews</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-image">
           <img src="assets/images/fivedollar.jpg" alt="Photograph of Australian five dollar note obverse and reverse designed by Gordon Andrews" draggable="false">
         </div>
-        <div class="gallery-caption">
-          Photograph of Australian five dollar note obverse and reverse designed by Gordon Andrews
-        </div>
+        <div class="gallery-caption">Photograph of Australian five dollar note obverse and reverse designed by Gordon Andrews</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-image">
           <img src="assets/images/onedollar.jpg" alt="One dollar banknote design sketch by Gordon Andrews" draggable="false">
         </div>
-        <div class="gallery-caption">
-          One dollar banknote design sketch by Gordon Andrews
-        </div>
+        <div class="gallery-caption">One dollar banknote design sketch by Gordon Andrews</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-image">
           <img src="assets/images/fruitcake.jpg" alt="Label for fruit cake designed by Gordon Andrews for David Jones" draggable="false">
         </div>
-        <div class="gallery-caption">
-          Label for fruit cake designed by Gordon Andrews for David Jones
-        </div>
+        <div class="gallery-caption">Label for fruit cake designed by Gordon Andrews for David Jones</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-image">
           <img src="assets/images/rondo-chair.jpg" alt="'Rondo' chair by Gordon Andrews" draggable="false">
         </div>
-        <div class="gallery-caption">
-          'Rondo' chair by Gordon Andrews
-        </div>
+        <div class="gallery-caption">'Rondo' chair by Gordon Andrews</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-image">
           <img src="assets/images/exhibition-invitation.jpg" alt="Exhibition invitation designed by Gordon Andrews" draggable="false">
         </div>
-        <div class="gallery-caption">
-          Exhibition invitation designed by Gordon Andrews
-        </div>
+        <div class="gallery-caption">Exhibition invitation designed by Gordon Andrews</div>
       </div>
     </section>
   </main>
@@ -102,7 +90,72 @@
     </div>
   </footer>
 
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
+      <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+      <button class="lightbox-next" aria-label="Next">&#8594;</button>
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
   <script src="js/javascript.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const nextBtn = document.querySelector('.lightbox-next');
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const images = Array.from(document.querySelectorAll('.gallery-image img'));
+      let currentIndex = -1;
+
+      function openLightbox(index) {
+        const img = images[index];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.closest('.gallery-item').querySelector('.gallery-caption').textContent;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('fade-in');
+        document.body.style.overflow = 'hidden';
+        currentIndex = index;
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('fade-in');
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+        currentIndex = -1;
+      }
+
+      function showNext(direction) {
+        if (currentIndex === -1) return;
+        const nextIndex = (currentIndex + direction + images.length) % images.length;
+        openLightbox(nextIndex);
+      }
+
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', () => showNext(1));
+      prevBtn.addEventListener('click', () => showNext(-1));
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext(1);
+        if (e.key === 'ArrowLeft') showNext(-1);
+      });
+    });
+  </script>
 
 </body>
 </html>

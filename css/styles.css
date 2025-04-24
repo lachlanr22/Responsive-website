@@ -275,6 +275,7 @@ body.gallery-page .gallery-image img {
   width: calc(100% - 40px);
   display: block;
   margin: 0 auto;
+  cursor: pointer;
 }
 body.gallery-page .gallery-caption {
   margin-top: 1rem;
@@ -316,13 +317,11 @@ body.about-page .about-extra {
   margin-bottom: 3rem;
 }
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  animation: fadeInScale 0.4s ease forwards;
 }
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
 }
 .site-footer {
   background: #666666;
@@ -389,4 +388,73 @@ body.about-page .about-extra {
   .hero-overlay{bottom:1rem;right:5%;transform:none;max-width:90%;}
   .hero-overlay h2{font-size:1.75rem;}
   .footer-inner{flex-direction:column;align-items:center;gap:0.5rem;}
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox.hidden {
+  display: none;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInScale 0.4s ease forwards;
+}
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border: 4px solid var(--accent-blue);
+  margin-bottom: 1rem;
+}
+.lightbox-content p {
+  font-size: 1rem;
+  margin-top: 0;
+}
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: var(--accent-blue);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-close {
+  top: -10px;
+  right: -10px;
+}
+.lightbox-prev {
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lightbox-next {
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
 }
