@@ -583,6 +583,11 @@ body.about-page .about-extra {
 .featured-work h2.visible::after {
   width: 50px;
 }
+.work-text {
+  flex: 1;
+  padding: 0 2rem;
+  text-align: left; 
+}
 
 
 
