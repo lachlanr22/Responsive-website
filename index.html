@@ -34,7 +34,14 @@
           </svg>
         </button>
         <input type="text" class="search-input" placeholder="Search…" aria-label="Search">
-      </div>
+        <button class="search-submit-btn" aria-label="Submit Search">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+</div>
     </div>
   </header>
 
@@ -54,39 +61,82 @@
     </section>
 
     <section class="featured-work container">
-      <h2>Featured Work</h2>
+  <h2 class="visible">Featured Work</h2>
 
-      <div class="work-item fade-in">
-        <div class="work-image">
-          <img src="assets/images/banknote-2d.jpeg" alt="Australia $2 note designed by Gordon Andrews" draggable="false" loading="lazy">
+  <div class="work-item fade-in">
+    <div class="work-image">
+      <img src="assets/images/banknote-2d.jpeg" alt="Australia $2 note designed by Gordon Andrews" draggable="false" loading="lazy">
+    </div>
+    <div class="work-text">
+      <h3>Australian Decimal Banknotes (1966) – Image of the $2 Note</h3>
+      <p>
+        Gordon Andrews designed Australia’s first decimal banknotes, introduced in 1966, creating a distinctly
+        Australian visual identity. The $2 note featured William Charles Wentworth, one of the early explorers of the
+        Blue Mountains and a key political figure. This note was part of a broader suite of currency that marked the
+        country’s shift to decimalisation and reflected its national heritage. Andrews’ work on the banknotes also
+        incorporated state-of-the-art anti-counterfeiting measures, shaping the future of Australian currency design.
+      </p>
+    </div>
+  </div>
+
+  <div class="work-item reverse fade-in">
+    <div class="work-image">
+      <img src="assets/images/monograph.jpeg" alt="Cover of 1993 monograph 'Gordon Andrews: A Designer’s Life'" draggable="false" loading="lazy">
+    </div>
+    <div class="work-text">
+      <h3>“Gordon Andrews: A Designer’s Life” (1993) – Exhibition & Book</h3>
+      <p>
+        This retrospective exhibition, held at the Powerhouse Museum, celebrated the breadth of Gordon Andrews’ career
+        in graphic, industrial, and exhibition design. The accompanying monograph, "Gordon Andrews: A Designer’s Life",
+        was also published the same year by NSW University Press. The exhibition showcased his influential works, from
+        furniture and urban wayfinding systems to his famous currency designs, cementing his role in shaping
+        Australia’s modern visual identity.
+      </p>
+    </div>
+  </div>
+
+  <div class="work-item fade-in">
+    <div class="work-image">
+      <img src="assets/images/cameron-lift.jpg" alt="Cameron Offices lift interior designed by Gordon Andrews" draggable="false" loading="lazy">
+    </div>
+    <div class="work-text">
+      <h3>Cameron Offices (1970s) – Architectural Interiors & Wayfinding</h3>
+      <p>
+        Designed in collaboration with architect John Andrews (no relation), the Cameron Offices in Canberra were an
+        example of Brutalist architecture where Gordon Andrews contributed to interior design and navigation systems.
+        His work blended functionality with modernist aesthetics, integrating custom signage and design elements that
+        helped define user experience within the government offices. His contributions were pioneering in how
+        environmental graphics and signage could enhance interaction and user experience in large-scale public spaces.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <section class="about-summary fade-in">
+      <div class="container about-summary-inner">
+        <div class="about-summary-image">
+          <img src="assets/images/GordonBio.jpg" alt="Photograph of Gordon Andrews" loading="lazy" draggable="false">
         </div>
-        <div class="work-text">
-          <h3>Australian Decimal Banknotes (1966) – Image of the $2 Note</h3>
-          <p>Gordon Andrews designed Australia’s first decimal banknotes, introduced in 1966, creating a distinctly Australian visual identity. The $2 note features John Macarthur, a key figure in the wool industry, with intricate security patterns and vibrant colours. Andrews’ work combined artistic detail with anti-counterfeiting measures, shaping the future of Australian currency design.</p>
+        <div class="about-summary-text">
+          <h2>About Gordon Andrews</h2>
+          <p>
+            Gordon Andrews (1914–2001) was an influential Australian designer whose work spanned multiple disciplines,
+            including industrial design, graphic design, and exhibition design. Born in Sydney, Andrews initially trained
+            as an artist before transitioning into design, where he became a pivotal figure in shaping modern Australian
+            visual culture. His career began in the 1930s, and by the post-war period, he had established himself as a
+            leading designer, working on projects both domestically and internationally.
+          </p>
+          <p>
+            Andrews was deeply interested in modernist principles, and his work often reflected a fusion of functionality
+            and aesthetic innovation. He was particularly influenced by European and Scandinavian design movements,
+            which he encountered during his travels. These experiences broadened his perspective and contributed to his
+            reputation as a forward-thinking designer in Australia.
+          </p>
+          <a href="about.html" class="read-more-link">Read more →</a>
         </div>
       </div>
-
-      <div class="work-item reverse fade-in">
-        <div class="work-image">
-          <img src="assets/images/monograph.jpeg" alt="Cover of 1993 monograph 'Gordon Andrews: A Designer’s Life'" draggable="false" loading="lazy">
-        </div>
-        <div class="work-text">
-          <h3>“Gordon Andrews: A Designer’s Life” (1993) – Exhibition & Book</h3>
-          <p>This retrospective exhibition, held at the Powerhouse Museum, celebrated the breadth of Gordon Andrews’ career in graphic, industrial, and exhibition design. The accompanying monograph, Gordon Andrews: A Designer’s Life, was published the same year by NSW University Press. The exhibition showcased his influential work, from furniture and urban wayfinding systems to his famous currency designs, cementing his role in shaping Australia’s modern visual identity.</p>
-        </div>
-      </div>
-
-      <div class="work-item fade-in">
-        <div class="work-image">
-          <img src="assets/images/cameron-lift.jpg" alt="Cameron Offices lift interior designed by Gordon Andrews" draggable="false" loading="lazy">
-        </div>
-        <div class="work-text">
-          <h3>Cameron Offices (1970s) – Architectural Interiors & Wayfinding</h3>
-          <p>Designed in collaboration with architect John Andrews (no relation), the Cameron Offices in Canberra were an example of Brutalist architecture, where Gordon Andrews contributed to interior design and wayfinding systems. His work blended functionality with modernist aesthetics, integrating custom signage and design elements that complemented the building’s geometric, industrial structure. His approach to urban design helped enhance navigation and user experience in large-scale public spaces.</p>
-        </div>
-      </div>
-
     </section>
+    
   </main>
 
   <footer class="site-footer">

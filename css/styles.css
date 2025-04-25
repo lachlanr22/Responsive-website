@@ -98,13 +98,27 @@ body {
   color: var(--text-light);
   font-family: var(--font-body);
   font-size: 1rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 2.5rem 0.25rem 0.5rem;
   transition: width 0.3s ease, opacity 0.3s ease;
 }
 .search-container.active .search-input {
   width: 200px;
   opacity: 1;
   pointer-events: auto;
+}
+.search-submit-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  display: none;
+}
+.search-container.active .search-submit-btn {
+  display: block;
 }
 .page-heading-container {
   text-align: center;
@@ -463,3 +477,115 @@ body.about-page .about-extra {
   top: 50%;
   transform: translateY(-50%);
 }
+.search-container.active .search-btn {
+  display: none;
+}
+.about-summary {
+  padding: 4rem 0;
+  background-color: #1a1a1a;
+}
+
+.about-summary-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-summary-image {
+  flex: 1 1 300px;
+  border: 2px solid var(--accent-blue);
+  overflow: hidden;
+}
+
+.about-summary-image img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.about-summary-image:hover img {
+  transform: scale(1.02);
+}
+
+.about-summary-text {
+  flex: 2;
+  color: var(--text-light);
+}
+
+.about-summary-text h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-blue);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.about-summary-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-summary-inner {
+    flex-direction: column;
+  }
+
+  .about-summary-text h2 {
+    font-size: 1.75rem;
+  }
+}
+.read-more-link {
+  font-weight: 500;
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 1rem;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.read-more-link:hover,
+.read-more-link:focus {
+  color: var(--text-light);
+}
+.search-submit-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.featured-work {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.featured-work h2 {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.featured-work h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: width 0.5s ease-out;
+}
+
+.featured-work h2.visible::after {
+  width: 50px;
+}
+
+
+
+
+
+
