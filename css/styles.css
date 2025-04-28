@@ -644,6 +644,43 @@ body.catalogues-page .work-item .work-image:hover img {
   color: var(--text-light);    /* white text */
   text-decoration: none;       /* no underline */
 }
+.main-nav .dropdown {
+  position: relative;
+}
+.main-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background: var(--bg-dark);
+  border: 1px solid var(--accent-blue);
+  min-width: 180px;
+  z-index: 10;
+}
+.main-nav .dropdown:hover .dropdown-menu {
+  display: flex;
+}
+.main-nav .dropdown-menu a {
+  padding: 0.5rem 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.main-nav .dropdown-menu a:hover {
+  background: var(--accent-blue);
+}
+.main-nav .dropdown-menu {
+  background: #666666;      /* match .site-header */
+  left: 50%;                /* position under Projects */
+  transform: translateX(-50%);
+  border-color: var(--accent-blue);
+}
+.main-nav .dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
 
 
 

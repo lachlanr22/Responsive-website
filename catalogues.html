@@ -53,7 +53,14 @@
       </h1>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="projects.html" class="dropdown-toggle">Projects</a>
+          <div class="dropdown-menu">
+            <a href="catalogues.html">Catalogues</a>
+            <a href="banknotes.html">Banknotes</a>
+            <a href="furniture.html">Furniture</a>
+          </div>
+        </div>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
       </nav>
@@ -150,5 +157,50 @@
   </div>
 
   <script src="js/javascript.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const nextBtn = document.querySelector('.lightbox-next');
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const images = Array.from(document.querySelectorAll('.work-image img'));
+      let currentIndex = -1;
+
+      function openLightbox(index) {
+        const img = images[index];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.closest('.work-item').querySelector('.work-text p').textContent;
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        currentIndex = index;
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+        currentIndex = -1;
+      }
+
+      function showNext(direction) {
+        if (currentIndex < 0) return;
+        openLightbox((currentIndex + direction + images.length) % images.length);
+      }
+
+      images.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', () => showNext(1));
+      prevBtn.addEventListener('click', () => showNext(-1));
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext(1);
+        if (e.key === 'ArrowLeft') showNext(-1);
+      });
+    });
+  </script>
 </body>
 </html>

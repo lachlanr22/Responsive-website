@@ -21,7 +21,14 @@
       </h1>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
+        <div class="dropdown">
+          <a href="projects.html" class="dropdown-toggle">Projects</a>
+          <div class="dropdown-menu">
+            <a href="catalogues.html">Catalogues</a>
+            <a href="banknotes.html">Banknotes</a>
+            <a href="furniture.html">Furniture</a>
+          </div>
+        </div>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
       </nav>
@@ -117,7 +124,7 @@
         <div class="about-summary-image">
           <img src="assets/images/GordonBio.jpg" alt="Photograph of Gordon Andrews" loading="lazy" draggable="false">
         </div>
-        <div class="about-summary-text">
+        <div class="about-summary-text">  
           <h2>About Gordon Andrews</h2>
           <p>
             Gordon Andrews (1914–2001) was an influential Australian designer whose work spanned multiple disciplines,
@@ -140,7 +147,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-attribution">This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2025.</p>
+      <p class="footer-attribution">This website was produced by students in the Faculty of Arts &amp; Design, University of Canberra, 2025.</p>
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -178,37 +185,27 @@
         lightboxImg.alt = img.alt;
         lightboxCaption.textContent = img.closest('.work-item').querySelector('.work-text p').textContent;
         lightbox.classList.remove('hidden');
-        lightbox.classList.add('fade-in');
         document.body.style.overflow = 'hidden';
         currentIndex = index;
       }
 
       function closeLightbox() {
-        lightbox.classList.remove('fade-in');
         lightbox.classList.add('hidden');
         document.body.style.overflow = '';
         currentIndex = -1;
       }
 
       function showNext(direction) {
-        if (currentIndex === -1) return;
-        const nextIndex = (currentIndex + direction + images.length) % images.length;
-        openLightbox(nextIndex);
+        if (currentIndex < 0) return;
+        openLightbox((currentIndex + direction + images.length) % images.length);
       }
 
-      images.forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(index));
-      });
-
+      images.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
       closeBtn.addEventListener('click', closeLightbox);
       nextBtn.addEventListener('click', () => showNext(1));
       prevBtn.addEventListener('click', () => showNext(-1));
-
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (e) => {
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => {
         if (lightbox.classList.contains('hidden')) return;
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowRight') showNext(1);
@@ -216,6 +213,5 @@
       });
     });
   </script>
-
 </body>
 </html>
