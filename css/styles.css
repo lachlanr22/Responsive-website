@@ -602,6 +602,49 @@ body.about-page .about-extra {
   max-width: 100%;
   object-fit: contain;
 }
+body.catalogues-page .hero-inner img {
+  filter: brightness(0.6) !important;
+}
+
+body.catalogues-page .hero-overlay {
+  opacity: 1 !important;
+}
+
+body.catalogues-page .hero .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+body.catalogues-page .hero-overlay {
+  right: 5%;
+  left: 5%;
+}
+body.catalogues-page .work-item .work-image {
+  flex: 1 1 400px;
+  max-width: 400px;
+}
+
+body.catalogues-page .work-item .work-image img {
+  width: calc(100% - 40px);
+  transition: transform 0.3s ease;
+}
+
+body.catalogues-page .work-item .work-image:hover img {
+  transform: scale(1.05);
+}
+.featured-work .work-image img {
+  cursor: pointer;
+}
+.projects.container a.project-item,
+.projects.container a.project-item:link,
+.projects.container a.project-item:visited {
+  display: block;              /* ensure the whole card is clickable */
+  color: var(--text-light);    /* white text */
+  text-decoration: none;       /* no underline */
+}
+
 
 
 
