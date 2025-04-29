@@ -906,6 +906,254 @@ body.catalogues-page .work-item .work-image:hover img {
     text-align: left;
   }
 }
+@media (max-width: 1024px) and (orientation: portrait) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center; /* changed from flex-start to center */
+    gap: 1rem;
+    text-align: center;  /* ensure text within aligns too */
+  }
+
+  .footer-attribution {
+    width: 100%;
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  .footer-nav {
+    width: 100%;
+    justify-content: center; /* changed from flex-start to center */
+  }
+}
+
+@media (max-width: 1024px) and (orientation: portrait) {
+  .footer-nav {
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+  body.projects-page .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* preserves spacing */
+    padding: 3rem 0;
+  }
+
+  body.projects-page .project-item {
+    flex: 0 1 300px; /* or adjust width to taste */
+    max-width: 100%;
+  }
+}
+/* ==========================================================================
+   Mobile portrait tweaks for catalogues page (≤400px)
+   ========================================================================== */
+@media only screen and (max-width: 400px) and (orientation: portrait) {
+  body.catalogues-page .featured-work .work-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  body.catalogues-page .featured-work .work-image {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+  }
+
+  body.catalogues-page .featured-work .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  body.catalogues-page .featured-work .work-text {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  body.catalogues-page .featured-work .work-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  body.catalogues-page .featured-work .work-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 480px), (max-width: 1024px) and (orientation: portrait) {
+  .lightbox-prev,
+  .lightbox-next {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body.banknotes-page .featured-work .work-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  body.banknotes-page .work-image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    max-width: 100%;
+  }
+
+  body.banknotes-page .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  body.banknotes-page .work-text {
+    padding: 0 1rem;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  body.banknotes-page .work-text p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body.banknotes-page .featured-work .work-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  body.banknotes-page .work-image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    max-height: unset !important; /* ← overrides any max height */
+    display: flex;
+    justify-content: center;
+  }
+
+  body.banknotes-page .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    max-height: none !important; /* ← most likely culprit */
+  }
+
+  body.banknotes-page .work-text {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  body.banknotes-page .work-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body.catalogues-page .featured-work .work-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  body.catalogues-page .work-image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    max-height: unset !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  body.catalogues-page .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    max-height: none !important;
+  }
+
+  body.catalogues-page .work-text {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  body.catalogues-page .work-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body.furniture-page .featured-work .work-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  body.furniture-page .work-image {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    border: none;
+    max-height: unset !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  body.furniture-page .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    max-height: none !important;
+  }
+
+  body.furniture-page .work-text {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  body.furniture-page .work-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+  body.gallery-page .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  body.gallery-page .gallery-item {
+    flex: 0 1 300px;
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
