@@ -6,7 +6,7 @@
   <title>Gordon Andrews | Designer & Innovator</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="index-page">
 
   <header class="site-header">
     <div class="container header-inner">
@@ -22,7 +22,7 @@
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <div class="dropdown">
-          <a href="projects.html" class="dropdown-toggle">Projects</a>
+          <a href="projects.html">Projects</a>
           <div class="dropdown-menu">
             <a href="catalogues.html">Catalogues</a>
             <a href="banknotes.html">Banknotes</a>
@@ -124,7 +124,7 @@
         <div class="about-summary-image">
           <img src="assets/images/GordonBio.jpg" alt="Photograph of Gordon Andrews" loading="lazy" draggable="false">
         </div>
-        <div class="about-summary-text">  
+        <div class="about-summary-text">
           <h2>About Gordon Andrews</h2>
           <p>
             Gordon Andrews (1914–2001) was an influential Australian designer whose work spanned multiple disciplines,
@@ -147,7 +147,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-attribution">This website was produced by students in the Faculty of Arts &amp; Design, University of Canberra, 2025.</p>
+      <p class="footer-attribution">This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2025.</p>
       <nav class="footer-nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -170,6 +170,7 @@
   <script src="js/javascript.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // lightbox
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxCaption = document.getElementById('lightbox-caption');
@@ -179,25 +180,28 @@
       const images = Array.from(document.querySelectorAll('.work-image img'));
       let currentIndex = -1;
 
-      function openLightbox(index) {
-        const img = images[index];
+      function openLightbox(idx) {
+        const img = images[idx];
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightboxCaption.textContent = img.closest('.work-item').querySelector('.work-text p').textContent;
         lightbox.classList.remove('hidden');
+        lightbox.classList.add('fade-in');
         document.body.style.overflow = 'hidden';
-        currentIndex = index;
+        currentIndex = idx;
       }
 
       function closeLightbox() {
+        lightbox.classList.remove('fade-in');
         lightbox.classList.add('hidden');
         document.body.style.overflow = '';
         currentIndex = -1;
       }
 
-      function showNext(direction) {
-        if (currentIndex < 0) return;
-        openLightbox((currentIndex + direction + images.length) % images.length);
+      function showNext(dir) {
+        if (currentIndex === -1) return;
+        const nextIdx = (currentIndex + dir + images.length) % images.length;
+        openLightbox(nextIdx);
       }
 
       images.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
