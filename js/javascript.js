@@ -104,3 +104,22 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowLeft') showNext(-1);
   });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+  if (dropdownToggle) {
+    dropdownToggle.setAttribute('aria-haspopup', 'true');
+    dropdownToggle.setAttribute('aria-expanded', 'false');
+
+    dropdownToggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const menu = this.nextElementSibling;
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        menu.style.display = expanded ? 'none' : 'flex';
+      }
+    });
+  }
+});
+

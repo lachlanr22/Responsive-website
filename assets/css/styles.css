@@ -1216,6 +1216,36 @@ body.catalogues-page .work-item .work-image:hover img {
   padding: 0;
   margin: 0;
 }
+/* ===========================
+   Accessibility: Dropdown Keyboard Support
+=========================== */
+
+/* Show dropdown menu on hover OR keyboard focus */
+.main-nav .dropdown:hover .dropdown-menu,
+.main-nav .dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+/* ============================================
+   Disable hero overlay interaction on mobile and tablet
+=============================================== */
+@media (max-width: 1024px) {
+  .index-page .hero-inner img {
+    filter: none !important;
+  }
+
+  .index-page .hero-overlay {
+    display: none !important;
+  }
+}
+/* ============================================
+   Hide hero overlay text on mobile (catalogues)
+=============================================== */
+@media (max-width: 480px) {
+  body.catalogues-page .hero-overlay p {
+    display: none !important;
+  }
+}
+
 
 
 
