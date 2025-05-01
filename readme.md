@@ -1,3 +1,5 @@
+https://lachlanr22.github.io/Responsive-website/
+
 # Rationale for the Gordon Andrews Website
 
 The Gordon Andrews website was developed as a responsive, interactive, and visually cohesive experience that presents the life and work of the influential Australian designer. The site was built using semantic HTML, modern CSS, and vanilla JavaScript, with a focus on accessibility, mobile responsiveness, and interactive engagement. It reflects an iterative design process that incorporated both planned and emergent features, responding to both the design brief and usability considerations.
