@@ -38,6 +38,8 @@ This project demonstrates technical skill, design consistency, and critical enga
 
 ## References
 
-Budiu, R. (2020). *Dark mode and usability: Pros and cons*. Nielsen Norman Group. https://www.nngroup.com/articles/dark-mode/  
-Gustafson, A. (2015). *Adaptive web design: Crafting rich experiences with progressive enhancement* (2nd ed.). New Riders. https://adaptivewebdesign.info  
-Ware, C. (2012). *Information visualization: Perception for design* (3rd ed.). Morgan Kaufmann. https://www.elsevier.com/books/information-visualization/ware/978-0-12-381464-7
+Budiu, R. (2020). *Dark mode and usability: Pros and cons*. Nielsen Norman Group. https://www.nngroup.com/articles/dark-mode/
+
+Gustafson, A. (2015). *Adaptive web design: Crafting rich experiences with progressive enhancement* (2nd ed.). New Riders. https://adaptivewebdesign.info
+
+Ware, C. (2012). *Information visualization: Perception for design*. https://www.elsevier.com/books/information-visualization/ware/978-0-12-381464-7
