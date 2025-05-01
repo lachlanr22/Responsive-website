@@ -28,7 +28,9 @@ body {
 .site-header {
   background: #666666;
   padding: 0.2rem 0;
+  position: relative; 
 }
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -1244,6 +1246,18 @@ body.catalogues-page .work-item .work-image:hover img {
   body.catalogues-page .hero-overlay p {
     display: none !important;
   }
+}
+/* ===========================
+   Header Accent Line
+=========================== */
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--accent-blue);
 }
 
 
