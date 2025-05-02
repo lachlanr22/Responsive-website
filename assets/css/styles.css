@@ -26,7 +26,7 @@ body {
    Header and Site Title
 =========================== */
 .site-header {
-  background: #666666;
+  background: #1a1a1a;
   padding: 0.2rem 0;
   position: relative; 
 }
@@ -370,7 +370,7 @@ body.about-page .about-extra {
    Footer Styles
 =========================== */
 .site-footer {
-  background: #666666;
+  background: #1a1a1a;
   border-top: 2px solid var(--accent-blue);
   padding: 1.5rem 0;
 }
@@ -718,7 +718,7 @@ body.catalogues-page .work-item .work-image:hover img {
   background: var(--accent-blue);
 }
 .main-nav .dropdown-menu {
-  background: #666666;      
+  background: #1a1a1a;      
   left: 50%;                
   transform: translateX(-50%);
   border-color: var(--accent-blue);
@@ -1259,6 +1259,10 @@ body.catalogues-page .work-item .work-image:hover img {
   width: 100%;
   background-color: var(--accent-blue);
 }
+.about-summary {
+  margin-bottom: 3rem; 
+}
+
 
 
 
